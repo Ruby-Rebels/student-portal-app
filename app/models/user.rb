@@ -1,3 +1,19 @@
 class User < ApplicationRecord
-  has_secure_password  
+  has_secure_password
+
+  def self.find_by(options)
+    student_array = Unirest.get("api-link.blah/#{options[:id]}.json").body
+  end
+
+  def update(params)
+    Unirest.patch(
+      "api-link.blah/#{id}",
+      headers: {
+        "Accept" => "application/json"
+      },
+      parameters: {
+        # resume params
+      }
+    )
+  end
 end
