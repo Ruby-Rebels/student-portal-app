@@ -11,7 +11,4 @@ class UsersController < ApplicationController
       password_digest: params[:password]
     )
   end
-
-  def resume
-  end
 end
