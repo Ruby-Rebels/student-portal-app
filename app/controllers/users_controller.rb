@@ -4,11 +4,4 @@ class UsersController < ApplicationController
 
   def home
   end
-
-  def create
-    @user = User.create(
-      email: params[:email],
-      password_digest: params[:password]
-    )
-  end
 end
